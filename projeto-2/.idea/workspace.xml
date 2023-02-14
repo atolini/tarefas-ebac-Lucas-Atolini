@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -46,13 +46,16 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.dao" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example.dao" />
       <recent name="org.example.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteDAOTest.pesquisarCliente">
-    <configuration name="ClienteDAOTest.pesquisarCliente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClienteServiceIntegrationTest">
+    <configuration name="ClienteServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="projeto-2" />
       <extension name="coverage">
         <pattern>
@@ -61,40 +64,71 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteDAOTest" />
-      <option name="METHOD_NAME" value="pesquisarCliente" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteServiceIntegrationTest.alterarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="alterarTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.buscarCliente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteServiceIntegrationTest.buscarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="projeto-2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.domain.*" />
+          <option name="PATTERN" value="org.example.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.example.domain.ClienteTest" />
-      <option name="METHOD_NAME" value="buscarCliente" />
+      <option name="PACKAGE_NAME" value="org.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="buscarTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.pesquisar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteServiceIntegrationTest.cadastrarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="projeto-2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.domain.*" />
+          <option name="PATTERN" value="org.example.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.example.domain.ClienteTest" />
-      <option name="METHOD_NAME" value="pesquisar" />
+      <option name="PACKAGE_NAME" value="org.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="cadastrarTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteServiceIntegrationTest.excluirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="excluirTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,9 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteDAOTest.pesquisarCliente" />
-        <item itemvalue="JUnit.ClienteTest.buscarCliente" />
-        <item itemvalue="JUnit.ClienteTest.pesquisar" />
+        <item itemvalue="JUnit.ClienteServiceIntegrationTest" />
+        <item itemvalue="JUnit.ClienteServiceIntegrationTest.buscarTest" />
+        <item itemvalue="JUnit.ClienteServiceIntegrationTest.alterarTest" />
+        <item itemvalue="JUnit.ClienteServiceIntegrationTest.excluirTest" />
+        <item itemvalue="JUnit.ClienteServiceIntegrationTest.cadastrarTest" />
       </list>
     </recent_temporary>
   </component>

@@ -1,7 +1,12 @@
 package org.example.domain;
 
-public class Cliente {
+import org.example.dao.generic.Persistence;
+import org.example.dao.generic.TipoChave;
+
+public class Cliente implements Persistence {
     private String nome;
+
+    @TipoChave("getCpf")
     private Long cpf;
     private Long tel;
     private String end;
@@ -64,5 +69,20 @@ public class Cliente {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cliente cliente = (Cliente) o;
+
+        return cpf.equals(cliente.cpf);
+    }
+
+    @Override
+    public int hashCode() {
+        return cpf.hashCode();
     }
 }
