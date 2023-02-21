@@ -1,90 +1,81 @@
 package org.example.dao.generic;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import org.example.domain.Cliente;
+
 import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public abstract class GenericDAO<T extends Persistence, E extends Serializable> implements IGenericDAO<T, E> {
-    private SingletonMap singletonMap;
 
-    protected GenericDAO() {
-        this.singletonMap = SingletonMap.getInstance();
+    protected EntityManagerFactory entityManagerFactory;
+
+    protected EntityManager entityManager;
+
+    protected Class<T> persistenceClass;
+
+    protected GenericDAO(Class<T> persistenceClass) {
+        this.persistenceClass = persistenceClass;
     }
 
     @Override
-    public Boolean cadastrar(T entity) {
-        Map<E, T> internMap = (Map<E, T>) getMap();
-        E chave = getChave(entity);
-        if (internMap.containsKey(chave)) {
-            return false;
-        }
-        internMap.put(chave, entity);
-        return true;
+    public T cadastrar(T entity) {
+        openConnection();
+        entityManager.persist(entity);
+        entityManager.getTransaction().commit();
+        closeConnection();
+        return entity;
     }
 
     @Override
-    public Boolean excluir(E value) {
-        Map<E, T> internMap = (Map<E, T>) getMap();
-        T object = internMap.get(value);
-        if (object != null) {
-            internMap.remove(value);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public Boolean alterar(T entity) {
-        Map<E, T> internMap = (Map<E, T>) getMap();
-        E chave = getChave(entity);
-        T object = internMap.get(chave);
-        if (object != null) {
-            internMap.replace(chave, entity);
-            return true;
-        } else {
-            return false;
-        }
+    public void excluir(T entity) {
+        openConnection();
+        entity = entityManager.merge(entity);
+        entityManager.remove(entity);
+        entityManager.getTransaction().commit();
+        closeConnection();
     }
 
     @Override
     public T buscar(E value) {
-        Map<E, T> internMap = (Map<E, T>) getMap();
-        return internMap.get(value);
+        openConnection();
+        T entity = (T) entityManager.find(this.persistenceClass, value);
+        entityManager.getTransaction().commit();
+        closeConnection();
+        return entity;
     }
 
     @Override
     public Collection<T> buscarTodos() {
-        Map<E, T> internMap = (Map<E, T>) getMap();
-        return internMap.values();
+        openConnection();
+        String sb = "SELECT obj FROM " +
+                this.persistenceClass.getSimpleName() +
+                " obj";
+        List<T> list = (List<T>) entityManager.createQuery(sb, this.persistenceClass).getResultList();
+        closeConnection();
+        return list;
     }
 
-    /* Metodos de apoio */
-    private Map<?, ?>  getMap() {
-        return this.singletonMap.getMap().computeIfAbsent(this.getClass(), k -> new HashMap<>());
+    @Override
+    public T alterar(T entity) {
+        openConnection();
+        entity = entityManager.merge(entity);
+        entityManager.getTransaction().commit();
+        closeConnection();
+        return entity;
     }
 
-    public <E> E getChave(T entity) {
-        Field[] fields = entity.getClass().getDeclaredFields();
-        E returnValue = null;
-        for (Field field : fields) {
-            if (field.isAnnotationPresent(TipoChave.class)) {
-                TipoChave tipoChave = field.getAnnotation(TipoChave.class);
-                String nomeMetodo = tipoChave.value();
-                try {
-                    Method method = entity.getClass().getMethod(nomeMetodo);
-                    returnValue = (E) method.invoke(entity);
-                    return returnValue;
-                } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-                    e.printStackTrace();
-                    throw new RuntimeException();
-                }
-            }
-        }
-        throw new RuntimeException();
+    // Open e Close connection;
+    protected void closeConnection() {
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
+    protected void openConnection() {
+        this.entityManagerFactory = jakarta.persistence.Persistence.createEntityManagerFactory("Projeto4");
+        entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
     }
 }

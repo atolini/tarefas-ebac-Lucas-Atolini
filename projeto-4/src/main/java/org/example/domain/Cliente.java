@@ -1,17 +1,35 @@
 package org.example.domain;
 
+import jakarta.persistence.*;
 import org.example.dao.generic.Persistence;
-import org.example.dao.generic.TipoChave;
 
+@Entity
+@Table(name = "tb_cliente")
 public class Cliente implements Persistence {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
+    @SequenceGenerator(name = "cliente_seq", sequenceName = "sq_cliente", initialValue = 1, allocationSize = 1)
+    private Long id;
+
+    @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
-    @TipoChave("getCpf")
+    @Column(name = "cpf", nullable = false, unique = true)
     private Long cpf;
+
+    @Column(name = "tel", nullable = false)
     private Long tel;
+
+    @Column(name = "endereco", nullable = false, length = 100)
     private String end;
+
+    @Column(name = "numero", nullable = false)
     private Integer numero;
+
+    @Column(name = "cidade", nullable = false, length = 100)
     private String cidade;
+
+    @Column(name = "estado", nullable = false, length = 50)
     private String estado;
 
     // Getters e setters
@@ -69,6 +87,14 @@ public class Cliente implements Persistence {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -54,9 +54,9 @@
       <recent name="org.example.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteServiceIntegrationTest">
-    <configuration name="ClienteServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="projeto-2" />
+  <component name="RunManager" selected="JUnit.ProdutoDAOTest">
+    <configuration name="ProdutoDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.dao.*" />
@@ -64,14 +64,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.ProdutoDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteServiceIntegrationTest.alterarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="projeto-2" />
+    <configuration name="VendaDAOTest.finalizarVenda" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.dao.*" />
@@ -79,15 +79,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="alterarTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.VendaDAOTest" />
+      <option name="METHOD_NAME" value="finalizarVenda" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteServiceIntegrationTest.buscarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="projeto-2" />
+    <configuration name="VendaDAOTest.removerProduto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.dao.*" />
@@ -95,15 +95,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="buscarTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.VendaDAOTest" />
+      <option name="METHOD_NAME" value="removerProduto" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteServiceIntegrationTest.cadastrarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="projeto-2" />
+    <configuration name="VendaDAOTest.removerTodos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.dao.*" />
@@ -111,15 +111,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="cadastrarTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.VendaDAOTest" />
+      <option name="METHOD_NAME" value="removerTodos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteServiceIntegrationTest.excluirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="projeto-2" />
+    <configuration name="VendaDAOTest.tentarAddProdVendaConcluida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto-4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.dao.*" />
@@ -127,8 +127,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.example.dao.ClienteServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="excluirTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.dao.VendaDAOTest" />
+      <option name="METHOD_NAME" value="tentarAddProdVendaConcluida" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteServiceIntegrationTest" />
-        <item itemvalue="JUnit.ClienteServiceIntegrationTest.buscarTest" />
-        <item itemvalue="JUnit.ClienteServiceIntegrationTest.alterarTest" />
-        <item itemvalue="JUnit.ClienteServiceIntegrationTest.excluirTest" />
-        <item itemvalue="JUnit.ClienteServiceIntegrationTest.cadastrarTest" />
+        <item itemvalue="JUnit.ProdutoDAOTest" />
+        <item itemvalue="JUnit.VendaDAOTest.tentarAddProdVendaConcluida" />
+        <item itemvalue="JUnit.VendaDAOTest.finalizarVenda" />
+        <item itemvalue="JUnit.VendaDAOTest.removerTodos" />
+        <item itemvalue="JUnit.VendaDAOTest.removerProduto" />
       </list>
     </recent_temporary>
   </component>
@@ -165,5 +165,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.example.domain.Venda" memberName="cliente" />
+        <PinnedItemInfo parentTag="org.example.domain.Venda" memberName="id" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((ProdutoQuantidade)entity.produtos.toArray()[0]).produto" custom="org.example.domain.ProdutoQuantidade" />
+        <watch expression="vBanco2.produtos" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

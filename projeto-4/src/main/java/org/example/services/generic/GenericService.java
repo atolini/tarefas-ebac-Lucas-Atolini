@@ -7,34 +7,34 @@ import java.io.Serializable;
 import java.util.Collection;
 
 public abstract class GenericService<T extends Persistence, E extends Serializable> implements IGenericService<T, E> {
-    private final IGenericDAO<T, E> genericDAO;
+    protected final IGenericDAO<T, E> genericDAO;
 
     public GenericService(IGenericDAO<T, E> genericDAO) {
         this.genericDAO = genericDAO;
     }
 
     @Override
-    public Boolean cadastrar(T entity) {
-        return genericDAO.cadastrar(entity);
+    public T cadastrar(T entity) {
+        return this.genericDAO.cadastrar(entity);
     }
 
     @Override
-    public Boolean excluir(E value) {
-        return genericDAO.excluir(value);
+    public void excluir(T entity) {
+        this.genericDAO.excluir(entity);
     }
 
     @Override
-    public Boolean alterar(T entity) {
-        return genericDAO.alterar(entity);
+    public T alterar(T entity) {
+        return this.genericDAO.alterar(entity);
     }
 
     @Override
     public T buscar(E value) {
-        return genericDAO.buscar(value);
+        return this.genericDAO.buscar(value);
     }
 
     @Override
     public Collection<T> buscarTodos() {
-        return genericDAO.buscarTodos();
+        return this.genericDAO.buscarTodos();
     }
 }
