@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ConfigServerAlunosApplication<ConfigServerAlunos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.lucasatolini.vendas.online.ConfigServerAlunosApplication",
+            "projectName": "ConfigServerAlunos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ClienteServiceAlunosApplication<ClienteServiceAlunos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.lucasatolini.vendas.online.ClienteServiceAlunosApplication",
+            "projectName": "ClienteServiceAlunos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
